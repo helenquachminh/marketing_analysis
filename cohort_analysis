@@ -1,0 +1,9 @@
+SELECT
+  Orders.Order_ID AS 'Order ID',
+  DATE_FORMAT(Orders.Created_Date, '%Y%m') AS 'Month of Order',
+  DATE_FORMAT(Users.Created_Date, '%Y%m') AS 'Month of Join',
+  PERIOD_DIFF(DATE_FORMAT(Orders.Created_Date, '%Y%m'),
+  DATE_FORMAT(Users.Created_Date, '%Y%m')) AS 'Difference In Months',
+  Users.Campaign_ID AS 'Campaign ID'
+FROM Orders AS Orders
+JOIN Users AS Users ON Orders.User_ID = Users.User_ID
