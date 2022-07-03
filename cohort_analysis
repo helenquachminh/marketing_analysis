@@ -7,3 +7,5 @@ SELECT
   Users.Campaign_ID AS 'Campaign ID'
 FROM Orders AS Orders
 JOIN Users AS Users ON Orders.User_ID = Users.User_ID
+GROUP BY 'Difference In Months', 'Campaign ID'
+ORDER BY 'Difference In Months' ASC;
